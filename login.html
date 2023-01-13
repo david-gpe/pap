@@ -89,45 +89,8 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-
-    <script>
-        function login() {
-
-            /*let persona={
-                usuario: document.getElementById('usuario').value,
-                pasword: document.getElementById('password').value
-            }*/
-            let urlencoding= `usuario=${document.getElementById('user').value}&pasword=${document.getElementById('clave').value}`;
-
-           // alert(urlencoding);
-
-            let datos =$('#login').serialize();
-
-            alert(datos);
-
-            $.ajax({
-                url:'procesar.php',
-                method:'POST',
-                data:datos, //URLEncoded, JSON(cadena)
-                dataType:'json',
-                success:function(res){
-                    if (res==1) {
-                        alert("Accediendo");
-                        window.location.href="sistema/";
-                    }else{
-                        alert("Contraseña incorrecta");
-                    }
-
-                },
-                error:function(error) {
-                    console.log(error);
-                    alert("Usuario o contraseña incorrecta");
-                }
-
-            });
-            return false;
-        }
-    </script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/func.js"></script>
 
 </body>
 

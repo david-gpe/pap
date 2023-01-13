@@ -95,51 +95,8 @@
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
 
-    <script>
-        function registrarUsuario() {
-
-
-
-            clave1=document.getElementById('clave').value;
-            clave2=document.getElementById('clave2').value;
-
-            if (clave1==clave2) {
-                let urlencoding= `nombre=${document.getElementById('nombre').value}&usuario=${document.getElementById('usuario').value}&correo=${document.getElementById('correo').value}&clave=${document.getElementById('clave').value}`;
-
-
-                alert(urlencoding);
-
-                let datos = $('#registrar').serialize();
-                //alert(datos);
-
-                $.ajax({
-                    url:'registrar.php',
-                    method:'POST',
-                    data:urlencoding, //URLEncoded, JSON(cadena)
-                    dataType:'json',
-                    success:function(res){
-                        //alert(res);
-                        if (res==1) {
-                            alert("Registro exitoso");
-                        // window.location.href="sistema/";
-                        }else{
-                            alert("Fallo al registrarse");
-                        }
-
-                    },
-                    error:function(error) {
-                        console.log(error);
-                        alert("Usuario o contraseña incorrecta");
-                    }
-
-                });
-            }else{
-                alert("Las contraseñas no cinciden");
-            }
-            
-            return false;
-        }
-    </script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/func.js"></script>
 
 </body>
 
